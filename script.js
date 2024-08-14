@@ -1,55 +1,95 @@
-const logo = document.querySelector('.logo');
+// SHOW GENRES AND FILTERS
+const genresButton = document.querySelector('.cta-genres');
+const filtersButton = document.querySelector('.cta-filters');
+const genFilt = document.querySelector('.gen-filt');
+const genres = document.querySelector('.genres');
+const filters = document.querySelector('.filters');
 
-logo.addEventListener('click', () => {
-    window.location.href = 'index.html';
-})
+let hoverState = {
+    isHoveringGenFilt: false,
+    isHoveringGenresButton: false,
+    isHoveringFiltersButton: false
+};
 
-// MOBILE CHANGE
-const mobileChange = document.querySelector('.mobile-change');
-const navToggle = document.getElementById('nav__toggle');
-const navToggleLabel = document.querySelector('.nav__toggle-label');
-const navToggleLabelSpan = document.querySelector('.nav__toggle-label span');
-const mobileBackdrop = document.querySelector('.mobile__change-backdrop');
-
-function openNav() {
-    navToggleLabel.classList.toggle('rotated');
-    navToggle.checked = true;
-    mobileChange.style.display = 'flex';
-    mobileBackdrop.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-}
-
-function closeNav() {
-    navToggleLabel.classList.remove('rotated');
-    navToggle.checked = false;
-    mobileChange.style.display = 'none';
-    mobileBackdrop.style.display = 'none';
-    document.body.style.overflow = '';
-}
-
-navToggleLabel.addEventListener('click', () => {
-    if (navToggle.checked === true) {
-        closeNav();
+function showGenOrFilt() {
+    if (hoverState.isHoveringGenresButton || hoverState.isHoveringFiltersButton) {
+        genFilt.style.display = 'block';
+        genres.style.display = hoverState.isHoveringGenresButton ? 'grid' : 'none';
+        filters.style.display = hoverState.isHoveringFiltersButton ? 'grid' : 'none';
     } else {
-        openNav();
+        setTimeout(() => {
+            if (!hoverState.isHoveringGenFilt && !hoverState.isHoveringGenresButton && !hoverState.isHoveringFiltersButton) {
+                genFilt.style.display = 'none';
+                genres.style.display = 'none';
+                filters.style.display = 'none';
+            }
+        }, 100);
     }
-});
+}
+
+function genFiltEventListeners() {
+    genresButton.addEventListener('mouseover', () => {
+        hoverState.isHoveringGenresButton = true;
+        showGenOrFilt();
+    });
+
+    genresButton.addEventListener('mouseout', () => {
+        hoverState.isHoveringGenresButton = false;
+        showGenOrFilt();
+    });
+
+    filtersButton.addEventListener('mouseover', () => {
+        hoverState.isHoveringFiltersButton = true;
+        showGenOrFilt();
+    });
+
+    filtersButton.addEventListener('mouseout', () => {
+        hoverState.isHoveringFiltersButton = false;
+        showGenOrFilt();
+    });
+
+    genFilt.addEventListener('mouseover', () => {
+        hoverState.isHoveringGenFilt = true;
+        showGenOrFilt();
+    });
+
+    genFilt.addEventListener('mouseout', () => {
+        hoverState.isHoveringGenFilt = false;
+        showGenOrFilt();
+    });
+}
+
+genFiltEventListeners();
+
+
+
 
 // SEARCH FORM
-const searchOpen = document.querySelector('.search-icon');
-const searchForm = document.querySelector('.search');
-const searchClose = document.querySelector('.search__close');
+const searchOpen = document.querySelectorAll('.search-icon');
+const searchForm = document.querySelectorAll('.search');
+const searchClose = document.querySelectorAll('.search__close');
 
 function openSearch() {
-    searchForm.style.display = 'block';
+    searchForm.forEach(form => {
+        form.style.display = 'block';
+    });
 }
 
 function closeSearch() {
-    searchForm.style.display = 'none';
+    searchForm.forEach(form => {
+        form.style.display = 'none';
+    });
 }
 
-searchOpen.addEventListener('click', (openSearch));
-searchClose.addEventListener('click', (closeSearch));
+searchOpen.forEach(button => {
+    button.addEventListener('click', (openSearch));
+});
+searchClose.forEach(button => {
+    button.addEventListener('click', (closeSearch));
+});
+
+
+
 
 // LOGREG FORM
 const openLogReg = document.querySelector('.cta-login');
@@ -82,106 +122,8 @@ loginLink.addEventListener('click', () => {
     loginForm.style.display = 'grid';
 });
 
-// LIGHT-DARK MODE
-const ldToggle = document.querySelectorAll('.ld-mode__toggle');
-const lightMode = document.querySelector('.light-mode');
-const darkMode = document.querySelector('.dark-mode');
-const modeToggle = document.querySelector('.mode__toggle');
 
-const applyMode = (isDarkMode) => {
-    if (isDarkMode) {
-        document.documentElement.classList.add('dark_mode');
-        modeToggle.checked = true;
-        darkMode.style.display = 'none';
-        lightMode.style.display = 'block';
-    } else {
-        document.documentElement.classList.remove('dark_mode');
-        modeToggle.checked = false;
-        darkMode.style.display = 'block';
-        lightMode.style.display = 'none';
-    }
-};
 
-modeToggle.addEventListener('change', () => {
-    const isDarkMode = modeToggle.checked;
-    localStorage.setItem('mode', isDarkMode ? 'dark' : 'light');
-    applyMode(isDarkMode);
-});
-
-ldToggle.forEach(svg => {
-    svg.addEventListener('click', () => {
-        modeToggle.checked = !modeToggle.checked;
-        modeToggle.dispatchEvent(new Event('change'));
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const savedMode = localStorage.getItem('mode');
-    applyMode(savedMode === 'dark');
-});
-
-// GENRES AND FILTERS
-const genreButton = document.querySelector('.genres-button');
-const filterButton = document.querySelector('.filters-button');
-const genFilt = document.querySelector('.gen-filt');
-const genres = document.querySelector('.genres');
-const filters = document.querySelector('.filters');
-
-let hoverState = {
-    isHoveringGenFilt: false,
-    isHoveringGenreButton: false,
-    isHoveringFilterButton: false,
-};
-
-function genFiltChildrenDisplay() {
-    if (hoverState.isHoveringGenreButton || hoverState.isHoveringFilterButton) {
-        genFilt.style.display = 'block';
-        genres.style.display = hoverState.isHoveringGenreButton ? 'grid' : 'none';
-        filters.style.display = hoverState.isHoveringFilterButton ? 'grid' : 'none';
-    } else {
-        setTimeout(() => {
-            if (!hoverState.isHoveringGenFilt && !hoverState.isHoveringGenreButton && !hoverState.isHoveringFilterButton) {
-                genFilt.style.display = 'none';
-                genres.style.display = 'none';
-                filters.style.display = 'none';
-            }
-        }, 200);
-    }
-}
-
-function genFiltEventListeners() {
-    genreButton.addEventListener('mouseover', () => {
-        hoverState.isHoveringGenreButton = true;
-        genFiltChildrenDisplay();
-    });
-
-    genreButton.addEventListener('mouseout', () => {
-        hoverState.isHoveringGenreButton = false;
-        genFiltChildrenDisplay();
-    });
-
-    filterButton.addEventListener('mouseover', () => {
-        hoverState.isHoveringFilterButton = true;
-        genFiltChildrenDisplay();
-    });
-
-    filterButton.addEventListener('mouseout', () => {
-        hoverState.isHoveringFilterButton = false;
-        genFiltChildrenDisplay();
-    });
-
-    genFilt.addEventListener('mouseover', () => {
-        hoverState.isHoveringGenFilt = true;
-        genFiltChildrenDisplay();
-    });
-
-    genFilt.addEventListener('mouseout', () => {
-        hoverState.isHoveringGenFilt = false;
-        genFiltChildrenDisplay();
-    });
-}
-
-genFiltEventListeners();
 
 // DESKTOP TOON SLIDER
 const sliders = document.querySelectorAll('.toon-slider');

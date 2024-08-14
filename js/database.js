@@ -9,7 +9,7 @@ const toons = [
         toonArtist: ['Sleepy-C'],
         toonGenres: ['Action', 'Adventure', 'Fantasy'],
         toonStatus: 'Ongoing',
-        toonCover: 'thumbnails/omnicient-readers-viewpoint.webp',
+        toonCover: '1.Sources/thumbnails/omnicient-readers-viewpoint.webp',
         toonChapters: [
             {
                 chapterTitle: 'Chapter 1',
@@ -179,7 +179,7 @@ const toons = [
         toonArtist: ['Studio Chun'],
         toonGenres: ['Action', 'Adventure', 'Fantasy'],
         toonStatus: 'Ongoing',
-        toonCover: 'thumbnails/latna-saga-survival-of-a-sword-king.jpeg',
+        toonCover: '1.Sources/thumbnails/latna-saga-survival-of-a-sword-king.jpeg',
         toonChapters: [
             {
                 chapterTitle: 'Chapter 1',
@@ -245,7 +245,7 @@ const toons = [
         toonArtist: ['YongYong'],
         toonGenres: ['Comedy', 'Romance', 'Fantasy'],
         toonStatus: 'Completed',
-        toonCover: 'thumbnails/charlotte-and-her-5-disciples.jpg',
+        toonCover: '1.Sources/thumbnails/charlotte-and-her-5-disciples.jpg',
         toonChapters: [
             {
                 chapterTitle: 'Chapter 1',
@@ -311,7 +311,7 @@ const toons = [
         toonArtist: ['SAM'],
         toonGenres: ['Drama', 'Romance', 'Fantasy'],
         toonStatus: 'Ongoing',
-        toonCover: 'thumbnails/your-throne.webp',
+        toonCover: '1.Sources/thumbnails/your-throne.webp',
         toonChapters: [
             {
                 chapterTitle: 'Chapter 1',
@@ -377,7 +377,7 @@ const toons = [
         toonArtist: ['Bill K'],
         toonGenres: ['Action', 'Adventure', 'Fantasy', 'Comedy', 'Drama'],
         toonStatus: 'Ongoing',
-        toonCover: 'thumbnails/sss-class-suicidal-hunter.jpg',
+        toonCover: '1.Sources/thumbnails/sss-class-suicidal-hunter.jpg',
         toonChapters: [
             {
                 chapterTitle: 'Chapter 1',
@@ -443,7 +443,7 @@ const toons = [
         toonArtist: ['YU'],
         toonGenres: ['Action', 'Adventure', 'Fantasy'],
         toonStatus: 'Ongoing',
-        toonCover: 'thumbnails/cleric-of-decay.webp',
+        toonCover: '1.Sources/thumbnails/cleric-of-decay.webp',
         toonChapters: [
             {
                 chapterTitle: 'Chapter 1',
@@ -509,7 +509,7 @@ const toons = [
         toonArtist: ['Mingsung'],
         toonGenres: ['Drama', 'Romance', 'Fantasy'],
         toonStatus: 'Completed',
-        toonCover: 'thumbnails/solitary-lady.jpg',
+        toonCover: '1.Sources/thumbnails/solitary-lady.jpg',
         toonChapters: [
             {
                 chapterTitle: 'Chapter 1',
@@ -575,7 +575,7 @@ const toons = [
         toonArtist: ['Tapseung'],
         toonGenres: ['Drama', 'Romance', 'Adventure', 'Fantasy'],
         toonStatus: 'Ongoing',
-        toonCover: 'thumbnails/the dark lords-confession.webp',
+        toonCover: '1.Sources/thumbnails/the dark lords-confession.webp',
         toonChapters: [
             {
                 chapterTitle: 'Chapter 1',
@@ -641,7 +641,7 @@ const toons = [
         toonArtist: ['WAG'],
         toonGenres: ['Action', 'Adventure', 'Fantasy'],
         toonStatus: 'On Hiatus',
-        toonCover: 'thumbnails/academy\'s-undercover-professor.jpg',
+        toonCover: '1.Sources/thumbnails/academy\'s-undercover-professor.jpg',
         toonChapters: [
             {
                 chapterTitle: 'Chapter 1',
@@ -733,7 +733,7 @@ const toons = [
         toonArtist: ['TI'],
         toonGenres: ['Action', 'Martial Arts', 'Fantasy'],
         toonStatus: 'Ongoing',
-        toonCover: 'thumbnails/absolute-sword-sense.jpg',
+        toonCover: '1.Sources/thumbnails/absolute-sword-sense.jpg',
         toonChapters: [
             {
                 chapterTitle: 'Chapter 1',
@@ -799,7 +799,7 @@ const toons = [
         toonArtist: ['Gugit'],
         toonGenres: ['Action', 'Fantasy', 'Adventure', 'Isekai', 'Martial Arts'],
         toonStatus: 'Ongoing',
-        toonCover: 'thumbnails/mookhyang.jpg',
+        toonCover: '1.Sources/thumbnails/mookhyang.jpg',
         toonChapters: [
             {
                 chapterTitle: 'Chapter 1',
@@ -865,7 +865,7 @@ const toons = [
         toonArtist: ['Jang Yeonghun'],
         toonGenres: ['Action', 'Adventure', 'Fantasy', 'Martial Arts'],
         toonStatus: 'Ongoing',
-        toonCover: 'thumbnails/absolute-regression.jpg',
+        toonCover: '1.Sources/thumbnails/absolute-regression.jpg',
         toonChapters: [
             {
                 chapterTitle: 'Chapter 1',
@@ -931,7 +931,7 @@ const toons = [
         toonArtist: ['Oribori'],
         toonGenres: ['Action', 'Fantasy', 'Martial Arts'],
         toonStatus: 'Ongoing',
-        toonCover: 'thumbnails/best-teacher-baek.jpg',
+        toonCover: '1.Sources/thumbnails/best-teacher-baek.jpg',
         toonChapters: [
             {
                 chapterTitle: 'Chapter 1',
@@ -997,7 +997,7 @@ const toons = [
         toonArtist: ['Rakhyun'],
         toonGenres: ['Action', 'Drama', 'Martial Arts', 'Military', 'School Life'],
         toonStatus: 'Ongoing',
-        toonCover: 'thumbnails/teenage-mercenary.jpg',
+        toonCover: '1.Sources/thumbnails/teenage-mercenary.jpg',
         toonChapters: [
             {
                 chapterTitle: 'Chapter 1',
@@ -1063,7 +1063,7 @@ const toons = [
         toonArtist: ['Min Hae'],
         toonGenres: ['Action', 'Adventure', 'Fantasy', 'Martial Arts'],
         toonStatus: 'Ongoing',
-        toonCover: 'thumbnails/northern-blade.jpg',
+        toonCover: '1.Sources/thumbnails/northern-blade.jpg',
         toonChapters: [
             {
                 chapterTitle: 'Chapter 1',
@@ -1129,7 +1129,7 @@ const toons = [
         toonArtist: ['Inkyo'],
         toonGenres: ['Action', 'Adventure', 'Fantasy', 'Martial Arts', 'Drama'],
         toonStatus: 'Ongoing',
-        toonCover: 'thumbnails/reaper.jpg',
+        toonCover: '1.Sources/thumbnails/reaper.jpg',
         toonChapters: [
             {
                 chapterTitle: 'Chapter 1',

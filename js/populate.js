@@ -15,21 +15,17 @@ const infoTableStatus = document.querySelector('.info__table-status');
 const chaptersTable = document.querySelector('.chapters__table');
 
 
-// Function to get query parameter value
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     const value = urlParams.get(param);
     return value;
 }
 
-// Get the title from the URL
 const toonTitle = decodeURIComponent(getQueryParam('title'));
 
-// Find the toon data
 const toon = toons.find(t => t.toonTitle === toonTitle);
+
 if (toon) {
-    console.log('Toon found:', toon); // Debugging line
-    // Populate the page with the cover image
     detailsCover.src = toon.toonCover;
     detailsCover.alt = toon.toonTitle;
 
@@ -53,6 +49,8 @@ if (toon) {
 
     infoTableStatus.textContent = toon.toonStatus;
 
+    const summaryModalP = document.querySelector('.summary-modal p');
+    summaryModalP.textContent = toon.toonSummary;
 
     toon.toonChapters.forEach((chapter, index) => {
         const row = document.createElement('tr');
@@ -61,10 +59,45 @@ if (toon) {
         row.appendChild(cell);
         chaptersTable.appendChild(row);
     });
-
-    console.log(toon.percentRating);
-} else {
-    console.error('Toon not found!');
+    } else {
+        console.error('Toon not found!');
 }
 
 
+
+
+// SUMMARY
+function isTextClipped(element) {
+    return element.scrollHeight > element.clientHeight;
+}
+
+function toggleReadMoreButton() {
+    const readMoreButton = document.querySelector('.summary__more');
+
+    if (isTextClipped(summary)) {
+        readMoreButton.style.display = 'block';
+    } else {
+        readMoreButton.style.display = 'none';
+    }
+}
+
+// Run the function on page load
+window.addEventListener('load', toggleReadMoreButton);
+
+
+const summaryMore = document.querySelector('.summary__more');
+
+const summaryModal = document.querySelector('.summary-modal');
+
+const summaryClose = document.querySelector('.summary__close');
+
+summaryMore.addEventListener('click', () => {
+    summaryModal.showModal();
+    logRegInputs.forEach(input => {
+        input.blur();
+    });
+});
+
+summaryClose.addEventListener('click', () => {
+    summaryModal.close();
+});

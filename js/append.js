@@ -2,8 +2,8 @@
 const popToons = document.querySelector('.pop__toon-slider');
 
 toons.forEach(toon => {
-    const sliderToonContainer = document.createElement('div');
-    sliderToonContainer.classList.add('slider__toon-container');
+    const sliderContainer = document.createElement('div');
+    sliderContainer.classList.add('slider__container');
 
     const sliderToonLink = document.createElement('a');
     sliderToonLink.classList.add('slider__toon-link');
@@ -18,46 +18,43 @@ toons.forEach(toon => {
     sliderToonTitle.classList.add('slider__toon-title');
     sliderToonTitle.textContent = toon.toonTitle;
 
-    sliderToonContainer.appendChild(sliderToonLink);
+    sliderContainer.appendChild(sliderToonLink);
     sliderToonLink.appendChild(sliderToonCover);
-    sliderToonContainer.appendChild(sliderToonTitle);
-    popToons.appendChild(sliderToonContainer);
+    sliderContainer.appendChild(sliderToonTitle);
+    popToons.appendChild(sliderContainer);
 });
 
 
 
 
-const recentToons = document.querySelector('.recent-toon-wrapper');
+const recentToons = document.querySelector('.recent__toon-wrapper');
 
 const elevenToons = toons.slice(0, 11);
 
 elevenToons.forEach(toon => {
-    const recentToonContainer = document.createElement('a');
-    recentToonContainer.classList.add('recent__toon-container');
-    recentToonContainer.setAttribute('data-title', toon.toonTitle);
-
-    const recentToonDetails = document.createElement('div');
-    recentToonDetails.classList.add('recent__toon-details');
+    const recentContainer = document.createElement('a');
+    recentContainer.classList.add('recent__container');
+    recentContainer.setAttribute('data-title', toon.toonTitle);
 
     const recentToonCover = document.createElement('img');
     recentToonCover.classList.add('recent__toon-cover');
     recentToonCover.src = toon.toonCover;
     recentToonCover.alt = toon.toonTitle;
 
-    const recentTitleGenre = document.createElement('div');
-    recentTitleGenre.classList.add('recent__title-genre');
+    const recentToonInfo = document.createElement('div');
+    recentToonInfo.classList.add('recent__toon-info');
 
-    const recentToonTitle = document.createElement('p');
-    recentToonTitle.classList.add('recent__toon-title');
-    recentToonTitle.textContent = toon.toonTitle;
+    const infoTitle = document.createElement('p');
+    infoTitle.classList.add('info-title');
+    infoTitle.textContent = toon.toonTitle;
 
-    const recentToonGenres = document.createElement('div');
-    recentToonGenres.classList.add('recent__toon-genres');
+    const infoGenres = document.createElement('div');
+    infoGenres.classList.add('info-genres');
 
     toon.toonGenres.forEach(genre => {
         const genreElement = document.createElement('p');
         genreElement.textContent = genre;
-        recentToonGenres.appendChild(genreElement);
+        infoGenres.appendChild(genreElement);
     });
 
     const latestChapters = document.createElement('div');
@@ -68,22 +65,20 @@ elevenToons.forEach(toon => {
     // Append the chapter titles to the latestChapters div
     latestThreeChapters.forEach(chapter => {
         const chapterElement = document.createElement('p');
-        chapterElement.classList.add('button')
         chapterElement.textContent = chapter.chapterTitle;
         latestChapters.appendChild(chapterElement);
     });
 
-    recentToonDetails.appendChild(recentToonCover);
-    recentTitleGenre.appendChild(recentToonTitle);
-    recentTitleGenre.appendChild(recentToonGenres);
-    recentToonDetails.appendChild(recentTitleGenre);
+    recentContainer.appendChild(recentToonCover);
+    recentContainer.appendChild(recentToonInfo);
+    recentToonInfo.appendChild(infoTitle);
+    recentToonInfo.appendChild(infoGenres);
+    recentContainer.appendChild(latestChapters);
 
-    recentToonContainer.appendChild(recentToonDetails);
-    recentToonContainer.appendChild(latestChapters);
-
-    recentToons.appendChild(recentToonContainer);
+    recentToons.appendChild(recentContainer);
 
 });
+
 
 
 
@@ -92,8 +87,8 @@ const newToons = document.querySelector('.new__toon-slider');
 const reversedToons = toons.slice().reverse();
 
 reversedToons.forEach(toon => {
-    const sliderToonContainer = document.createElement('div');
-    sliderToonContainer.classList.add('slider__toon-container');
+    const sliderContainer = document.createElement('div');
+    sliderContainer.classList.add('slider__container');
 
     const sliderToonLink = document.createElement('a');
     sliderToonLink.classList.add('slider__toon-link');
@@ -108,15 +103,16 @@ reversedToons.forEach(toon => {
     sliderToonTitle.classList.add('slider__toon-title');
     sliderToonTitle.textContent = toon.toonTitle;
     
-    sliderToonContainer.appendChild(sliderToonLink);
+    sliderContainer.appendChild(sliderToonLink);
     sliderToonLink.appendChild(sliderToonCover);
-    sliderToonContainer.appendChild(sliderToonTitle);
-    newToons.appendChild(sliderToonContainer);
+    sliderContainer.appendChild(sliderToonTitle);
+    newToons.appendChild(sliderContainer);
 });
 
+
+
+
 const rankToons = document.querySelector('.rank__toon-wrapper');
-
-
 
 const firstEightToons = toons.slice(0, 10);
 
@@ -127,31 +123,31 @@ const rankedToons = firstEightToons.sort((a, b) => {
 console.log(rankedToons);
 
 rankedToons.forEach((toon, index) => {
-    const wrapperToonContainer = document.createElement('div');
-    wrapperToonContainer.classList.add('wrapper__toon-container');
+    const rankToonContainer = document.createElement('div');
+    rankToonContainer.classList.add('rank__toon-container');
 
-    const wrapperToonLink = document.createElement('a');
-    wrapperToonLink.classList.add('wrapper__toon-link');
-    wrapperToonLink.setAttribute('data-title', toon.toonTitle);
+    const rankToonLink = document.createElement('a');
+    rankToonLink.classList.add('rank__toon-link');
+    rankToonLink.setAttribute('data-title', toon.toonTitle);
     
-    const wrapperToonCover = document.createElement('img');
-    wrapperToonCover.classList.add('wrapper__toon-cover');
-    wrapperToonCover.src = toon.toonCover;
-    wrapperToonCover.alt = toon.toonTitle;
+    const rankToonCover = document.createElement('img');
+    rankToonCover.classList.add('rank__toon-cover');
+    rankToonCover.src = toon.toonCover;
+    rankToonCover.alt = toon.toonTitle;
     
-    const wrapperToonTitle = document.createElement('p');
-    wrapperToonTitle.classList.add('wrapper__toon-title');
-    wrapperToonTitle.textContent = toon.toonTitle;
+    const rankToonTitle = document.createElement('p');
+    rankToonTitle.classList.add('rank__toon-title');
+    rankToonTitle.textContent = toon.toonTitle;
     
-    wrapperToonLink.appendChild(wrapperToonContainer);
-    wrapperToonContainer.appendChild(wrapperToonCover);
-    wrapperToonContainer.appendChild(wrapperToonTitle);
+    rankToonLink.appendChild(rankToonContainer);
+    rankToonContainer.appendChild(rankToonCover);
+    rankToonContainer.appendChild(rankToonTitle);
 
     if (index === 0) {
-        wrapperToonLink.classList.add('featured');
+        rankToonLink.classList.add('featured');
     }
     
-    rankToons.appendChild(wrapperToonLink);
+    rankToons.appendChild(rankToonLink);
 });
 
 
@@ -163,13 +159,13 @@ document.querySelectorAll('.slider__toon-link').forEach(link => {
     link.href = `read.html?title=${encodedTitle}`; // Set the href attribute dynamically
 });
 
-document.querySelectorAll('.recent__toon-container').forEach(link => {
+document.querySelectorAll('.recent__container').forEach(link => {
     const toonTitle = link.dataset.title; // Get the title from the data attribute
     const encodedTitle = encodeURIComponent(toonTitle); // Encode the title to safely pass it in URL
     link.href = `read.html?title=${encodedTitle}`; // Set the href attribute dynamically
 });
 
-document.querySelectorAll('.wrapper__toon-link').forEach(link => {
+document.querySelectorAll('.rank__toon-link').forEach(link => {
     const toonTitle = link.dataset.title; // Get the title from the data attribute
     const encodedTitle = encodeURIComponent(toonTitle); // Encode the title to safely pass it in URL
     link.href = `read.html?title=${encodedTitle}`; // Set the href attribute dynamically

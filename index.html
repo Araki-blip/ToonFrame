@@ -3,240 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="graphics/logo-white.svg">
+    <link rel="icon" href="1.Sources/graphics/logo-white.svg">
     <title>ToonFrame</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="header.css">
+    
     <script src="js/database.js" defer></script>
     <script src="js/append.js" defer></script>
 </head>
 <body>
-    
+
     <header>
         <div class="header-wrapper">
+            <div class="header-upper">
+                <div class="header-left">
+                    <a href="index.html">
+                        <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 224" xml:space="preserve">
+                            <path class="logo__path" d="M0,0v224h224V0H0z M16,49.9V16h192L16,49.9z M16,105.9l77.6-13.7L114,
+                            208H16V105.9z M165,208L143,83.5L208,72v136H165z"/>
+                        </svg>
+                    </a>
 
-            <div class="header-left">
-                <svg class="logo"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 224" xml:space="preserve">
-                    <path class="logo__path" d="M0,0v224h224V0H0z M16,49.9V16h192L16,49.9z M16,105.9l77.6-13.7L114,
-                    208H16V105.9z M165,208L143,83.5L208,72v136H165z"/>
-                </svg>
+                    <p class="cta-genres | cta-text">Genres</p>
+                    <p class="cta-filters | cta-text">Filters</p>
+                    <nav class="gen-filt">
+                        <ul class="genres">
+                            <li class="genres__button | button">Action</li>
+                            <li class="genres__button | button">Adventure</li>
+                            <li class="genres__button | button">Fantasy</li>
+                            <li class="genres__button | button">Isekai</li>
+                            <li class="genres__button | button">Martial Arts</li>
+                            <li class="genres__button | button">Drama</li>
+                            <li class="genres__button | button">Mystery</li>
+                            <li class="genres__button | button">Slice of Life</li>
+                            <li class="genres__button | button">Comedy</li>
+                            <li class="genres__button | button">Romance</li>
+                            <li class="genres__button | button">GL</li>
+                            <li class="genres__button | button">BL</li>
+                            <li class="genres__button | button">Horror</li>
+                            <li class="genres__button | button">Thriller</li>
+                            <li class="genres__button | button">Sci-Fi</li>
+                            <li class="genres__button | button">Mystery</li>
+                        </ul>
 
-                <p class="genres-button | cta-text">Genres</p>
-                <p class="filters-button | cta-text">Filters</p>
-                <nav class="gen-filt">
-                    <ul class="genres">
-                        <li class="button">Action</li>
-                        <li class="button">Fantasy</li>
-                        <li class="button">Adventure</li>
-                        <li class="button">Martial Arts</li>
-                        <li class="button">Isekai</li>
-                        <li class="button">Drama</li>
-                        <li class="button">Slice of Life</li>
-                        <li class="button">Comedy</li>
-                        <li class="button">Romance</li>
-                        <li class="button">GL</li>
-                        <li class="button">BL</li>
-                        <li class="button">Horror</li>
-                        <li class="button">Sci-Fi</li>
-                        <li class="button">Mystery</li>
-                    </ul>
-                    <ul class="filters">
-                        <li class="button">Include 18<span>+</span> Content</li>
-                        <li class="button">Only 18<span>+</span> Content</li>
-                        <li class="button">None 18<span>+</span> Content</li>
-                    </ul>
-                </nav>
-            </div>
+                        <ul class="filters">
+                            <li class="filters__button | button">Include 18<span>+</span> Content</li>
+                            <li class="filters__button | button">Only 18<span>+</span> Content</li>
+                            <li class="filters__button | button">None 18<span>+</span> Content</li>
+                        </ul>
+                    </nav>
+                </div>
 
-            <div class="header-right">
-                <div class="mobile-change">
-                    <div class="search-form">
-                        <div class="search">
-                            <input type="search" placeholder="Search..." class="search__input">
-                            <div class="search__close"></div>
+                <div class="header-right">
+                        <div class="search-form">
+                            <div class="search">
+                                <input type="text" class="search__input" placeholder="Search...">
+                                <div class="search__close"></div>
+                            </div>
+
+                            <svg class="search-icon | svg-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" xml:space="preserve">
+                                <circle class="search__icon-bg" cx="16" cy="16" r="14"/>
+                                <path class="search__icon-focus" d="M16,0C7.2,0,0,7.2,0,16c0,8.8,7.2,16,16,16s16-7.2,16-16C32,7.2,24.8,0,16,
+                                    0z M16,30C8.3,30,2,23.7,2,16C2,8.3,8.3,2,16,2s14,6.3,14,14C30,23.7,23.7,30,16,30z"/>
+                                <path class="search__icon-focus" d="M24.3,22.3l-4-4c0,0,0,0-0.1,0c0.9-1.2,1.4-2.6,1.4-4.2c0-3.9-3.1-7-7-7c-3.9,
+                                    0-7,3.1-7,7c0,3.9,3.1,7,7,7c1.6,0,3-0.5,4.2-1.4c0,0,0,0,0,0.1l4.1,4.1c0.2,0.2,0.5,0.3,0.7,0.3c0.3,0,0.5-0.1,
+                                    0.7-0.3C24.7,23.3,24.7,22.7,24.3,22.3zM14.5,19c-2.8,0-5-2.2-5-5c0-2.8,2.2-5,5-5c2.8,0,5,2.2,5,5C19.5,16.8,
+                                    17.3,19,14.5,19z"/>
+                            </svg> 
+                            </svg>
                         </div>
-                        <svg class="search-icon | svg-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" xml:space="preserve">
-                            <circle class="search__icon-bg" cx="16" cy="16" r="14"/>
-                            <path class="search__icon-focus" d="M16,0C7.2,0,0,7.2,0,16c0,8.8,7.2,16,16,16s16-7.2,16-16C32,7.2,24.8,0,16,
-                                0z M16,30C8.3,30,2,23.7,2,16C2,8.3,8.3,2,16,2s14,6.3,14,14C30,23.7,23.7,30,16,30z"/>
-                            <path class="search__icon-focus" d="M24.3,22.3l-4-4c0,0,0,0-0.1,0c0.9-1.2,1.4-2.6,1.4-4.2c0-3.9-3.1-7-7-7c-3.9,
-                                    0-7,3.1-7,7c0,3.9,3.1,7,7,7c1.6,0,3-0.5,4.2-1.4c0,0,0,0,0,0.1l4.1,4.1c0.2,0.2,0.5,0.3,0.7,0.3c0.3,0,
-                                    0.5-0.1,0.7-0.3C24.7,23.3,24.7,22.7,24.3,22.3zM14.5,19c-2.8,0-5-2.2-5-5c0-2.8,2.2-5,5-5c2.8,0,5,2.2,5,
-                                    5C19.5,16.8,17.3,19,14.5,19z"/>
+
+                        <button class="cta-login | button">
+                            <span>Login/SignUp</span>
+                        </button>
+                        <dialog class="logreg-modal">
+                            <form action="login" class="login-form | logreg-form">
+                                <p class="logreg__title">Login</p>
+                                <input type="text" placeholder="Username" class="login__username | logreg__input" required></input>
+                                <input type="password" placeholder="Password" class="login__password | logreg__input" required></input>
+                                <button class="login__button | logreg__button button">Login</button>
+                                <p>Don't have an account? Make one <span class="register-link | cta-text">here</span>.</p>
+                            </form>
+                            <form action="register" class="register-form | logreg-form" style="display: none;">
+                                <p class="logreg__title">Register</p>
+                                <input type="text" placeholder="Choose a Username" class="register__username | logreg__input" required>
+                                <input type="password" placeholder="Choose a Password" class="register__password | logreg__input" required>
+                                <input type="password" placeholder="Confirm your Password" class="register__password register__password-confirm | logreg__input" required>
+                                <button class="register__button | logreg__button button">Login</button>
+                                <p>Already have an account? Login <span class="login-link | cta-text">here</span>.</p>
+                            </form>
+                            <div class="logreg__close"></div>
+                        </dialog>
+
+                        <svg class="account-icon | svg-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" xml:space="preserve">
+                            <circle class="account__icon-bg" cx="16" cy="16" r="14"/>
+                            <path class="account__icon-focus" d="M16,0C7.2,0,0,7.2,0,16c0,3.1,0.9,6,2.4,8.5c0.2,0.3,0.4,0.6,0.6,0.9c0.2,0.3,
+                                0.4,0.5,0.6,0.8c0,0,0,0.1,0.1,0.1C6.7,29.8,11.1,32,16,32s9.3-2.2,12.3-5.7c0,0,0,0,0.1-0.1c0.2-0.2,0.4-0.5,
+                                0.6-0.8c0.2-0.3,0.4-0.6,0.6-0.9C31.1,22,32,19.1,32,16C32,7.2,24.8,0,16,0L16,0z M3.7,22.7C2.6,20.7,2,18.4,2,16C2,
+                                8.3,8.3,2,16,2s14,6.3,14,14c0,2.4-0.6,4.7-1.7,6.7c-2.1-2.5-4.9-4.3-8.2-5.2c1.5-1.2,2.4-3,2.4-5C22.5,8.9,19.6,6,
+                                16,6s-6.5,2.9-6.5,6.5c0,2,0.9,3.8,2.4,5C8.6,18.4,5.8,20.2,3.7,22.7L3.7,22.7z M16,17c-2.5,0-4.5-2-4.5-4.5c0-2.5,
+                                2-4.5,4.5-4.5s4.5,2,4.5,4.5C20.5,15,18.5,17,16,17L16,17z M16,30c-4.5,0-8.6-2.2-11.1-5.5C7.4,21.2,11.5,19,16,
+                                19s8.6,2.2,11.1,5.5C24.6,27.8,20.5,30,16,30L16,30z"/>
                         </svg>
+
+                    <div class="mobile-toggle">
+                        <button class="nav__toggle" id="nav__toggle" name="nav__toggle" style="display: none;"></button>
+                        <label for="nav__toggle" class="nav__toggle-label">
+                            <span></span>
+                        </label>
                     </div>
-
-                    <button class="cta-login | button">
-                        <span>Login/SignUp</span>
-                    </button>
-                    <dialog class="logreg-modal" id="logreg-modal">
-                        <form action="login" class="login-form | logreg-form">
-                            <p class="logreg__title">Login</p>
-                            <input type="text" placeholder="Username" class="login__username | logreg__input" required></input>
-                            <input type="password" placeholder="Password" class="login__password | logreg__input" required></input>
-                            <button class="login__button | logreg__button button">Login</button>
-                            <p>Don't have an account? Make one <span class="register-link | cta-text">here</span>.</p>
-                        </form>
-                        <form action="register" class="register-form | logreg-form" style="display: none;">
-                            <p class="logreg__title">Register</p>
-                            <input type="text" placeholder="Choose a Username" class="register__username | logreg__input" required>
-                            <input type="password" placeholder="Choose a Password" class="register__password | logreg__input" required>
-                            <input type="password" placeholder="Confirm your Password" class="register__password register__password-confirm | logreg__input" required>
-                            <button class="register__button | logreg__button button">Login</button>
-                            <p>Already have an account? Login <span class="login-link | cta-text">here</span>.</p>
-                        </form>
-                        <div class="logreg__close"></div>
-                    </dialog>
-
-                    <svg class="account-icon | svg-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" xml:space="preserve" style="display: none;">
-                        <circle class="account__icon-bg" cx="16" cy="16" r="14"/>
-                        <path class="account__icon-focus" d="M16,0C7.2,0,0,7.2,0,16c0,3.1,0.9,6,2.4,8.5c0.2,0.3,0.4,0.6,0.6,0.9c0.2,0.3,
-                            0.4,0.5,0.6,0.8c0,0,0,0.1,0.1,0.1C6.7,29.8,11.1,32,16,32s9.3-2.2,12.3-5.7c0,0,0,0,0.1-0.1c0.2-0.2,0.4-0.5,
-                            0.6-0.8c0.2-0.3,0.4-0.6,0.6-0.9C31.1,22,32,19.1,32,16C32,7.2,24.8,0,16,0L16,0z M3.7,22.7C2.6,20.7,2,18.4,2,16C2,
-                            8.3,8.3,2,16,2s14,6.3,14,14c0,2.4-0.6,4.7-1.7,6.7c-2.1-2.5-4.9-4.3-8.2-5.2c1.5-1.2,2.4-3,2.4-5C22.5,8.9,19.6,6,
-                            16,6s-6.5,2.9-6.5,6.5c0,2,0.9,3.8,2.4,5C8.6,18.4,5.8,20.2,3.7,22.7L3.7,22.7z M16,17c-2.5,0-4.5-2-4.5-4.5c0-2.5,
-                            2-4.5,4.5-4.5s4.5,2,4.5,4.5C20.5,15,18.5,17,16,17L16,17z M16,30c-4.5,0-8.6-2.2-11.1-5.5C7.4,21.2,11.5,19,16,
-                            19s8.6,2.2,11.1,5.5C24.6,27.8,20.5,30,16,30L16,30z"/>
-                    </svg>
-
-                    <div class="ld-mode">
-                        <svg class="light-mode | ld-mode__toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" style="display: none;" xml:space="preserve">
-                            <circle class="light-mode__path" cx="24" cy="24" r="14"/>
-                            <path class="light-mode__path" d="M24,0L24,0c0.6,0,1,0.4,1,1v6c0,0.6-0.4,1-1,1h0c-0.6,0-1-0.4-1-1V1C23,0.4,23.4,
-                                0,24,0z"/>
-                            <path class="light-mode__path" d="M15.6,3.7L15.6,3.7c0.5-0.2,1.1,0,1.3,0.5l0.8,1.8c0.2,0.5,0,1.1-0.5,1.3l0,0c-0.5,
-                                0.2-1.1,0-1.3-0.5L15,5C14.8,4.5,15.1,3.9,15.6,3.7z"/>
-                            <path class="light-mode__path" d="M30.9,40.6L30.9,40.6c0.5-0.2,1.1,0,1.3,0.5L33,43c0.2,0.5,0,1.1-0.5,1.3l0,0c-0.5,
-                                0.2-1.1,0-1.3-0.5l-0.8-1.8C30.1,41.4,30.4,40.8,30.9,40.6z"/>
-                            <path class="light-mode__path" d="M3.7,15.6L3.7,15.6C3.9,15.1,4.5,14.8,5,15l1.8,0.8c0.5,0.2,0.8,0.8,0.5,1.3l0,
-                                0c-0.2,0.5-0.8,0.8-1.3,0.5l-1.8-0.8C3.7,16.7,3.5,16.1,3.7,15.6z"/>
-                            <path class="light-mode__path" d="M40.6,30.9L40.6,30.9c0.2-0.5,0.8-0.8,1.3-0.5l1.8,0.8c0.5,0.2,0.8,0.8,0.5,1.3l0,
-                                0c-0.2,0.5-0.8,0.8-1.3,0.5l-1.8-0.8C40.7,32,40.4,31.4,40.6,30.9z"/>
-                            <path class="light-mode__path" d="M32.4,3.7L32.4,3.7C32.9,3.9,33.2,4.5,33,5l-0.8,1.8c-0.2,0.5-0.8,0.8-1.3,0.5l0,
-                                0c-0.5-0.2-0.8-0.8-0.5-1.3l0.8-1.8C31.3,3.7,31.9,3.5,32.4,3.7z"/>
-                            <path class="light-mode__path" d="M17.1,40.6L17.1,40.6c0.5,0.2,0.8,0.8,0.5,1.3l-0.8,1.8c-0.2,0.5-0.8,0.8-1.3,
-                                0.5h0c-0.5-0.2-0.8-0.8-0.5-1.3l0.8-1.8C16,40.7,16.6,40.4,17.1,40.6z"/>
-                            <path class="light-mode__path" d="M44.3,15.6L44.3,15.6c0.2,0.5,0,1.1-0.5,1.3l-1.8,0.8c-0.5,0.2-1.1,0-1.3-0.5l0,
-                                0c-0.2-0.5,0-1.1,0.5-1.3L43,15C43.5,14.8,44.1,15.1,44.3,15.6z"/>
-                            <path class="light-mode__path" d="M7.4,30.9L7.4,30.9c0.2,0.5,0,1.1-0.5,1.3L5,33c-0.5,0.2-1.1,0-1.3-0.5l0,0c-0.2-0.5,
-                                0-1.1,0.5-1.3l1.8-0.8C6.6,30.1,7.2,30.4,7.4,30.9z"/>
-                            <path class="light-mode__path" d="M24,40L24,40c0.6,0,1,0.4,1,1v6c0,0.6-0.4,1-1,1h0c-0.6,0-1-0.4-1-1v-6C23,40.4,23.4,
-                                40,24,40z"/>
-                            <path class="light-mode__path" d="M0,24L0,24c0-0.6,0.4-1,1-1h6c0.6,0,1,0.4,1,1v0c0,0.6-0.4,1-1,1H1C0.4,25,0,24.6,
-                                0,24z"/>
-                            <path class="light-mode__path" d="M40,24L40,24c0-0.6,0.4-1,1-1h6c0.6,0,1,0.4,1,1v0c0,0.6-0.4,1-1,1h-6C40.4,25,40,
-                                24.6,40,24z"/>
-                            <path class="light-mode__path" d="M7,41L7,41c-0.4-0.4-0.4-1,0-1.4l4.2-4.2c0.4-0.4,1-0.4,1.4,0h0c0.4,0.4,0.4,1,0,
-                                1.4L8.4,41C8.1,41.4,7.4,41.4,7,41z"/>
-                            <path class="light-mode__path" d="M35.3,12.7L35.3,12.7c-0.4-0.4-0.4-1,0-1.4L39.6,7c0.4-0.4,1-0.4,1.4,0v0c0.4,0.4,0.4,
-                                1,0,1.4l-4.2,4.2C36.3,13.1,35.7,13.1,35.3,12.7z"/>
-                            <path class="light-mode__path" d="M41,41L41,41c-0.4,0.4-1,0.4-1.4,0l-4.2-4.2c-0.4-0.4-0.4-1,0-1.4v0c0.4-0.4,1-0.4,1.4,
-                                0l4.2,4.2C41.4,39.9,41.4,40.6,41,41z"/>
-                            <path class="light-mode__path" d="M12.7,12.7L12.7,12.7c-0.4,0.4-1,0.4-1.4,0L7,8.4C6.6,8.1,6.6,7.4,7,7l0,0c0.4-0.4,
-                                1-0.4,1.4,0l4.2,4.2C13.1,11.7,13.1,12.3,12.7,12.7z"/>
-                        </svg>
-                        <svg class="dark-mode | ld-mode__toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" xml:space="preserve">
-                            <path class="dark-mode__path" d="M48,36.1C43.3,43.3,35.3,48,26.1,48C11.7,48,0,36.3,0,21.9C0,12.7,4.7,4.6,11.9,0C9.2,
-                                4.1,7.7,9,7.7,14.2c0,14.4,11.7,26.1,26.1,26.1C39,40.3,43.9,38.8,48,36.1z"/>
-                            <path class="dark-mode__path" d="M48,12.3L48,12.3c-6.8,0-12.3-5.5-12.3-12.3v0c0,0,0,0,0,0c0,6.8-5.5,12.3-12.3,12.3h0c0,
-                                0,0,0,0,0c6.8,0,12.3,5.5,12.3,12.3c0,0,0,0,0,0v0C35.7,17.9,41.2,12.3,48,12.3C48,12.3,48,12.3,48,12.3z"/>
-                            <path class="dark-mode__path" d="M31.3,24.7L31.3,24.7c-4.4,0-8-3.6-8-8v0c0,0,0,0,0,0c0,4.4-3.6,8-8,8h0c0,0,0,0,0,0c4.4,
-                                0,8,3.6,8,8c0,0,0,0,0,0v0C23.3,28.2,26.9,24.7,31.3,24.7C31.3,24.7,31.3,24.7,31.3,24.7z"/>
-                            <path class="dark-mode__path" d="M48,20L48,20c-2.2,0-4-1.8-4-4v0c0,0,0,0,0,0c0,2.2-1.8,4-4,4h0c0,0,0,0,0,0c2.2,0,4,1.8,
-                                4,4c0,0,0,0,0,0v0C44,21.8,45.8,20,48,20C48,20,48,20,48,20z"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="mobile-toggle">
-                    <button class="nav__toggle" id="nav__toggle" name="nav__toggle" style="display: none;"></button>
-                    <label for="nav__toggle" class="nav__toggle-label">
-                        <span></span>
-                    </label>
                 </div>
             </div>
 
+            <div class="header-lower">
+                <div class="search-form">
+                    <div class="search">
+                        <input type="text" class="search__input" placeholder="Search...">
+                        <div class="search__close"></div>
+                    </div>
+
+                    <svg class="search-icon | svg-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" xml:space="preserve">
+                        <circle class="search__icon-bg" cx="16" cy="16" r="14"/>
+                        <path class="search__icon-focus" d="M16,0C7.2,0,0,7.2,0,16c0,8.8,7.2,16,16,16s16-7.2,16-16C32,7.2,24.8,0,16,
+                            0z M16,30C8.3,30,2,23.7,2,16C2,8.3,8.3,2,16,2s14,6.3,14,14C30,23.7,23.7,30,16,30z"/>
+                        <path class="search__icon-focus" d="M24.3,22.3l-4-4c0,0,0,0-0.1,0c0.9-1.2,1.4-2.6,1.4-4.2c0-3.9-3.1-7-7-7c-3.9,
+                            0-7,3.1-7,7c0,3.9,3.1,7,7,7c1.6,0,3-0.5,4.2-1.4c0,0,0,0,0,0.1l4.1,4.1c0.2,0.2,0.5,0.3,0.7,0.3c0.3,0,0.5-0.1,
+                            0.7-0.3C24.7,23.3,24.7,22.7,24.3,22.3zM14.5,19c-2.8,0-5-2.2-5-5c0-2.8,2.2-5,5-5c2.8,0,5,2.2,5,5C19.5,16.8,
+                            17.3,19,14.5,19z"/>
+                    </svg> 
+                    </svg>
+                </div>
+            </div>
         </div>
     </header>
 
-    <div class="mobile__change-backdrop"></div>
-    <input type="checkbox" id="mode__toggle" class="mode__toggle" style="display: none;">
-
     <main>
 
-
-
         <div class="pop-toon">
-            <p class="pop-toon-title | content-title">Popular Now</p>
+            <div class="content-title">Popular Now</div>
+            <hr class="content-divider">
             <div class="pop__toon-slider | toon-slider snaps-inline">
+
             </div>
         </div>
 
         <div class="recent-toon">
-            <p class="recent-toon-title | content-title">Recently Updated</p>
-            <div class="recent-toon-wrapper">
+            <div class="content-title">Recently Updated</div>
+            <hr class="content-divider">
+            <div class="recent__toon-wrapper">
+
             </div>
         </div>
 
         <div class="new-toon">
-            <p class="new-toon-title | content-title">New Releases</p>
+            <div class="content-title">New Releases</div>
+            <hr class="content-divider">
             <div class="new__toon-slider | toon-slider snaps-inline">
+
+                </div>
             </div>
         </div>
 
         <div class="rank-toon">
-            <p class="rank-toon-title | content-title">Top Rated</p>
+            <div class="content-title">Top Rated</div>
+            <hr class="content-divider">
             <div class="rank__toon-wrapper">
+
             </div>
         </div>
+
     </main>
 
     <footer>
         <div class="footer-wrapper">
-            <div class="download">
-                <p class="download__title">Download ToonFrame Now!</p>
-                <div class="download__links">
-                    <a href="#">
-                        <img src="graphics/GooglePlayBlack-01.svg" alt="">
-                    </a>
-                    <a href="#">
-                        <img src="graphics/AppStoreBlack-01.svg" alt="">
-                    </a>
-                </div>
-            </div>
-    
-            <div class="internal-links">
-                <ul>
-                    <a href="">About</a>
-                    <a href="">Terms</a>
-                    <a href="">Privacy</a>
-                    <a href="">Personal Data</a>
-                    <a href="">Contact</a>
-                </ul>
-            </div>
-    
-            <div class="social-links">
-                <a href="">Facebook</a>
-                <a href="">Instagram</a>
-                <a href="">Twitter</a>
-                <a href="">Reddit</a>
-            </div>
-
-            <a href="#" class="logo-footer-link">
-                <svg class="logo-footer"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 224" xml:space="preserve">
+            <p class="footer-text">If you like this site, consider supporting us <a href="" class="cta-text">here</a>.</p>
+            <a href="index.html">
+                <svg class="footer-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 224" xml:space="preserve">
                     <path class="logo__path" d="M0,0v224h224V0H0z M16,49.9V16h192L16,49.9z M16,105.9l77.6-13.7L114,
                     208H16V105.9z M165,208L143,83.5L208,72v136H165z"/>
                 </svg>
             </a>
         </div>
-
     </footer>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
