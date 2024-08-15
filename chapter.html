@@ -1,1 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="1.Sources/graphics/logo-white.svg">
+    <title>ToonFrame</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="styles/read.css">
+    
+    <script src="js/database.js" defer></script>
+    <script src="js/append.js" defer></script>
+    <script src="js/populate.js" defer></script>
+</head>
+<body>
 
+    <header>
+        <div class="header-wrapper">
+            <div class="header-upper">
+                <div class="header-left">
+                    <a href="index.html">
+                        <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 224" xml:space="preserve">
+                            <path class="logo__path" d="M0,0v224h224V0H0z M16,49.9V16h192L16,49.9z M16,105.9l77.6-13.7L114,
+                            208H16V105.9z M165,208L143,83.5L208,72v136H165z"/>
+                        </svg>
+                    </a>
+
+                    <p class="cta-genres | cta-text">Genres</p>
+                    <p class="cta-filters | cta-text">Filters</p>
+                    <nav class="gen-filt">
+                        <ul class="genres">
+                            <li class="genres__button | button">Action</li>
+                            <li class="genres__button | button">Adventure</li>
+                            <li class="genres__button | button">Fantasy</li>
+                            <li class="genres__button | button">Isekai</li>
+                            <li class="genres__button | button">Martial Arts</li>
+                            <li class="genres__button | button">Drama</li>
+                            <li class="genres__button | button">Mystery</li>
+                            <li class="genres__button | button">Slice of Life</li>
+                            <li class="genres__button | button">Comedy</li>
+                            <li class="genres__button | button">Romance</li>
+                            <li class="genres__button | button">GL</li>
+                            <li class="genres__button | button">BL</li>
+                            <li class="genres__button | button">Horror</li>
+                            <li class="genres__button | button">Thriller</li>
+                            <li class="genres__button | button">Sci-Fi</li>
+                            <li class="genres__button | button">Mystery</li>
+                        </ul>
+
+                        <ul class="filters">
+                            <li class="filters__button | button">Include 18<span>+</span> Content</li>
+                            <li class="filters__button | button">Only 18<span>+</span> Content</li>
+                            <li class="filters__button | button">None 18<span>+</span> Content</li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="header-right">
+                        <div class="search-form">
+                            <div class="search">
+                                <input type="text" class="search__input" placeholder="Search...">
+                                <div class="search__close"></div>
+                            </div>
+
+                            <svg class="search-icon | svg-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" xml:space="preserve">
+                                <circle class="search__icon-bg" cx="16" cy="16" r="14"/>
+                                <path class="search__icon-focus" d="M16,0C7.2,0,0,7.2,0,16c0,8.8,7.2,16,16,16s16-7.2,16-16C32,7.2,24.8,0,16,
+                                    0z M16,30C8.3,30,2,23.7,2,16C2,8.3,8.3,2,16,2s14,6.3,14,14C30,23.7,23.7,30,16,30z"/>
+                                <path class="search__icon-focus" d="M24.3,22.3l-4-4c0,0,0,0-0.1,0c0.9-1.2,1.4-2.6,1.4-4.2c0-3.9-3.1-7-7-7c-3.9,
+                                    0-7,3.1-7,7c0,3.9,3.1,7,7,7c1.6,0,3-0.5,4.2-1.4c0,0,0,0,0,0.1l4.1,4.1c0.2,0.2,0.5,0.3,0.7,0.3c0.3,0,0.5-0.1,
+                                    0.7-0.3C24.7,23.3,24.7,22.7,24.3,22.3zM14.5,19c-2.8,0-5-2.2-5-5c0-2.8,2.2-5,5-5c2.8,0,5,2.2,5,5C19.5,16.8,
+                                    17.3,19,14.5,19z"/>
+                            </svg> 
+                            </svg>
+                        </div>
+
+                        <button class="cta-login | button">
+                            <span>Login/SignUp</span>
+                        </button>
+                        <dialog class="logreg-modal">
+                            <form action="login" class="login-form | logreg-form">
+                                <p class="logreg__title">Login</p>
+                                <input type="text" placeholder="Username" class="login__username | logreg__input" required></input>
+                                <input type="password" placeholder="Password" class="login__password | logreg__input" required></input>
+                                <button class="login__button | logreg__button button">Login</button>
+                                <p>Don't have an account? Make one <span class="register-link | cta-text">here</span>.</p>
+                            </form>
+                            <form action="register" class="register-form | logreg-form" style="display: none;">
+                                <p class="logreg__title">Register</p>
+                                <input type="text" placeholder="Choose a Username" class="register__username | logreg__input" required>
+                                <input type="password" placeholder="Choose a Password" class="register__password | logreg__input" required>
+                                <input type="password" placeholder="Confirm your Password" class="register__password register__password-confirm | logreg__input" required>
+                                <button class="register__button | logreg__button button">Login</button>
+                                <p>Already have an account? Login <span class="login-link | cta-text">here</span>.</p>
+                            </form>
+                            <div class="logreg__close"></div>
+                        </dialog>
+
+                        <svg class="account-icon | svg-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" xml:space="preserve">
+                            <circle class="account__icon-bg" cx="16" cy="16" r="14"/>
+                            <path class="account__icon-focus" d="M16,0C7.2,0,0,7.2,0,16c0,3.1,0.9,6,2.4,8.5c0.2,0.3,0.4,0.6,0.6,0.9c0.2,0.3,
+                                0.4,0.5,0.6,0.8c0,0,0,0.1,0.1,0.1C6.7,29.8,11.1,32,16,32s9.3-2.2,12.3-5.7c0,0,0,0,0.1-0.1c0.2-0.2,0.4-0.5,
+                                0.6-0.8c0.2-0.3,0.4-0.6,0.6-0.9C31.1,22,32,19.1,32,16C32,7.2,24.8,0,16,0L16,0z M3.7,22.7C2.6,20.7,2,18.4,2,16C2,
+                                8.3,8.3,2,16,2s14,6.3,14,14c0,2.4-0.6,4.7-1.7,6.7c-2.1-2.5-4.9-4.3-8.2-5.2c1.5-1.2,2.4-3,2.4-5C22.5,8.9,19.6,6,
+                                16,6s-6.5,2.9-6.5,6.5c0,2,0.9,3.8,2.4,5C8.6,18.4,5.8,20.2,3.7,22.7L3.7,22.7z M16,17c-2.5,0-4.5-2-4.5-4.5c0-2.5,
+                                2-4.5,4.5-4.5s4.5,2,4.5,4.5C20.5,15,18.5,17,16,17L16,17z M16,30c-4.5,0-8.6-2.2-11.1-5.5C7.4,21.2,11.5,19,16,
+                                19s8.6,2.2,11.1,5.5C24.6,27.8,20.5,30,16,30L16,30z"/>
+                        </svg>
+
+                    <div class="mobile-toggle">
+                        <button class="nav__toggle" id="nav__toggle" name="nav__toggle" style="display: none;"></button>
+                        <label for="nav__toggle" class="nav__toggle-label">
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-lower">
+                <div class="search-form">
+                    <div class="search">
+                        <input type="text" class="search__input" placeholder="Search...">
+                        <div class="search__close"></div>
+                    </div>
+
+                    <svg class="search-icon | svg-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" xml:space="preserve">
+                        <circle class="search__icon-bg" cx="16" cy="16" r="14"/>
+                        <path class="search__icon-focus" d="M16,0C7.2,0,0,7.2,0,16c0,8.8,7.2,16,16,16s16-7.2,16-16C32,7.2,24.8,0,16,
+                            0z M16,30C8.3,30,2,23.7,2,16C2,8.3,8.3,2,16,2s14,6.3,14,14C30,23.7,23.7,30,16,30z"/>
+                        <path class="search__icon-focus" d="M24.3,22.3l-4-4c0,0,0,0-0.1,0c0.9-1.2,1.4-2.6,1.4-4.2c0-3.9-3.1-7-7-7c-3.9,
+                            0-7,3.1-7,7c0,3.9,3.1,7,7,7c1.6,0,3-0.5,4.2-1.4c0,0,0,0,0,0.1l4.1,4.1c0.2,0.2,0.5,0.3,0.7,0.3c0.3,0,0.5-0.1,
+                            0.7-0.3C24.7,23.3,24.7,22.7,24.3,22.3zM14.5,19c-2.8,0-5-2.2-5-5c0-2.8,2.2-5,5-5c2.8,0,5,2.2,5,5C19.5,16.8,
+                            17.3,19,14.5,19z"/>
+                    </svg> 
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="main-read">
+
+            <div class="main__read-chapter">
+                <div class="chapter-start">
+                    <div class="start__details">
+                        <p class="start__details-title"></p>
+                        <p class="start__details-chapter"></p>
+                    </div>
+
+                    <div class="ld-mode"></div>
+                </div>
+              
+              <div class="chapter__images">
+                <img src="" alt="" class="chapter-image"></img>
+              </div>
+              
+              <div class="chapter__end"></div>
+            </div>
+        </div>
+        <div class="read-toon-wrapper">
+
+            <div class="toon-details">
+                <div class="details__primary">
+                    <img src="" alt="" class="details__cover">
+
+                    <div class="primary__info">
+                        <div class="info__titles">
+                            <div class="titles__primary">
+                                <p class="details__title"></p>
+                                <p class="details__rating">N/A</p>
+                            </div>
+                            <p class="titles__alt"></p>
+                        </div>
+
+                        <div class="primary__cta">
+                            <!-- <button class="cta__read-first | details__button button">Read First</button> -->
+                            <button class="cta__read-continue | details__button button">Continue Reading</button>
+                            <button class="cta__read-bookmark | details__button button">Bookmark</button>
+                        </div>
+
+                        <div class="primary__summary">
+                            <p class="summary__title">Summary</p>
+                            <hr class="summary__divider">
+                            <p class="summary__summary"></p>
+                            <button class="summary__more">Read More+</button>
+                            <dialog class="summary-modal">
+                                <p></p>
+                                <div class="summary__close"></div>
+                            </dialog>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details__secondary">
+                    <table class="secondary__info-table">
+                        <tr>
+                            <th>Author:</th>
+                            <td class="info__table-author">N/A</td>
+                        </tr>
+                        <tr>
+                            <th>Artist:</th>
+                            <td class="info__table-artist">N/A</td>
+                        </tr>
+                        <tr>
+                            <th>Genres:</th>
+                            <td class="info__table-genres">N/A</td>
+                        </tr>
+                        <tr>
+                            <th>Status:</th>
+                            <td class="info__table-status">N/A</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="toon-chapters">
+                <p class="chapters__title">Chapters</p>
+                <div class="chapters-container scrollable-content">
+                    <table class="chapters__table">
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="toon-discussion">
+                <p>Comments</p>
+                <input type="text" placeholder="Leave Your Comment Before You Go..." class="discussion__input">
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-wrapper">
+            <p class="footer-text">If you like this site, consider supporting us <a href="" class="cta-text">here</a>.</p>
+            <a href="index.html">
+                <svg class="footer-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 224" xml:space="preserve">
+                    <path class="logo__path" d="M0,0v224h224V0H0z M16,49.9V16h192L16,49.9z M16,105.9l77.6-13.7L114,
+                    208H16V105.9z M165,208L143,83.5L208,72v136H165z"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
